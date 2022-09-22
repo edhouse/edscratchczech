@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "extensionPath": "/blockly_compressed_vertical_czech.js"
+            }
+        },
+        "condition": {
+            "urlFilter": "js/blockly_compressed_vertical.js",
+            "resourceTypes": [
+                "script"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "extensionPath": "/blocks_compressed_vertical_czech.js"
+            }
+        },
+        "condition": {
+            "urlFilter": "js/blocks_compressed_vertical.js",
+            "resourceTypes": [
+                "script"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "extensionPath": "/errorMessages_czech.js"
+            }
+        },
+        "condition": {
+            "urlFilter": "js/errorMessages.js",
+            "resourceTypes": [
+                "script"
+            ]
+        }
+    }
+]

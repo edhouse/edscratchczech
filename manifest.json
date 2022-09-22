@@ -1,0 +1,46 @@
+{
+  "name": "EdScratchCzech",
+  "version": "1.4",
+  "description": "Translate EdScratch blocks into Czech",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icon.png"
+  },
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "block_rules.json"
+    }]
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeContent"
+  ],
+  "host_permissions": [
+    "*://*.edscratchapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.edscratchapp.com/*"
+      ],
+      "js": [
+        "translate_dom.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blockly_compressed_vertical_czech.js",
+        "blocks_compressed_vertical_czech.js",
+        "errorMessages_czech.js"
+      ],
+      "matches": [
+        "*://*.edscratchapp.com/*"
+      ]
+    }
+  ]
+}
