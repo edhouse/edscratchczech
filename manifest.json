@@ -15,8 +15,7 @@
   },
   "permissions": [
     "declarativeNetRequest",
-    "declarativeNetRequestFeedback",
-    "declarativeContent"
+    "declarativeNetRequestFeedback"
   ],
   "host_permissions": [
     "*://*.edscratchapp.com/*"
