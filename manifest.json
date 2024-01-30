@@ -1,6 +1,6 @@
 {
   "name": "EdScratchCzech",
-  "version": "1.5",
+  "version": "1.6",
   "description": "Translate EdScratch blocks into Czech",
   "manifest_version": 3,
   "icons": {
@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.edscratchapp.com/*"
+        "*://*.edscratchapp.com/v2*"
       ],
       "js": [
         "translate_dom.js"
@@ -35,7 +35,9 @@
       "resources": [
         "blockly_compressed_vertical_czech.js",
         "blocks_compressed_vertical_czech.js",
-        "errorMessages_czech.js"
+        "blocks_compressed_vertical_czech_v3.js",
+        "errorMessages_czech.js",
+        "messages_czech_v3.js"
       ],
       "matches": [
         "*://*.edscratchapp.com/*"

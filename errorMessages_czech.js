@@ -16,11 +16,16 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ *@author ben@microbric.com <Ben Hayton>
  */
+//Article number: 2.2.2.4.3
+
 
 'use strict';
 
 //goog.provide('Blockly.Blocks.operators');
+
 
 goog.require('Blockly.Blocks');
 
@@ -44,10 +49,21 @@ Blockly.redErrorMessages = {
 	"EmptyInRep": 		"Bloky 'opakuj dokud nenastane' vyžadují podmínku.",
 	"EmptyInBSright": 	"Bloky 'bitový posun doprava' vyžadují proměnnou.",
 	"EmptyInBSleft": 	"Bloky 'bitový posun doleva' vyžadují proměnnou.",
+  "EmptyInOperatorNot": 		"Bloky 'ne' vyžadují podmínku.",
+  "EmptyInOperatorAnd": 		"Bloky 'a zároveň' vyžadují podmínku.",
+  "EmptyInOperatorOr": 		"Bloky 'nebo' vyžadují podmínku.",
 	"EmptyBackMusic":	"Bloky 'hraj hudbu na pozadí' musí obsahovat alespoň jednu notu.",
 	"NoStart": 			"Programy musí obsahovat událost 'Start', aby správně fungovaly. Pokud vidíš tuto chybu, otevři menu, vyber 'Nový' a začni vytvářet nový program.",
 	"NotBackMusic":		"Bloky 'hraj hudbu na pozadí' mohou obsahovat pouze noty.",
 	"NoMainBlocks": 	"Žádné bloky nejsou připojeny k události 'Start'.",
+  "EmptyInUSBreceived": "Bloky 'čekej na data USB' vyžadují proměnnou.",
+  "UsbInDriveDisBackwards": false,
+  "UsbInDriveDisLeft": false,
+  "UsbInDriveDisRight": false,
+  "UsbInDriveUntilForwards": false,
+  "UsbInDriveUntilBackwards": false,
+  "UsbInDriveUntilLeft": false,
+  "UsbInDriveUntilRight": false,
 };
 Blockly.yellowErrorMessages = {
 	"recMessObsOn": 		"Edison nemůže přijímat zprávy, pokud je zapnuté zjišťování překážek. Ujisti se, že je před přijímáním zprávy v programu zjišťování překážek vypnuté.",
@@ -63,6 +79,12 @@ Blockly.yellowErrorMessages = {
 	"driveBackwardsOpp": 	"Blok 'operátor' v bloku 'jeď vzad dokud nenastane' může způsobit, že Edison pojede nekonečně dlouho nebo blok 'jeď vzad' přeskočí.",
 	"driveLeftOpp": 		"Blok 'operátor' v bloku 'doleva dokud nenastane' může způsobit, že Edison pojede nekonečně dlouho nebo blok 'doleva' přeskočí.",
 	"driveRightOpp": 		"Blok 'operátor' v bloku 'doprava dokud nenastane' může způsobit, že Edison pojede nekonečně dlouho nebo blok 'doprava' přeskočí.",
+  "driveForwardsDistOpp": 	"Blok 'operátor' v bloku 'jeď vpřed' může způsobit, že Edison blok 'jeď vpřed' přeskočí.",
+	"driveBackwardsDisOpp": 	"Blok 'operátor' v bloku 'jeď vzad' může způsobit, že Edison blok 'jeď vzad' přeskočí.",
+	"driveLeftDisOpp": 		"Blok 'operátor' v bloku 'jeď doleva' může způsobit, že Edison blok 'jeď doleva' přeskočí.",
+	"driveRightDisOpp": 		"Blok 'operátor' v bloku 'jeď doprava' může způsobit, že Edison blok 'jeď doprava' přeskočí.",
+  "DriveLight" : "Blok 'úroveň světla' v bloku 'jeď' může způsobit, že Edison pojede nekonečně dlouho nebo blok 'jeď' přeskočí.",
+  "IRMessageOpps" :   "Blok 'operátor' v bloku 'pošli IR zprávu' nebude schopen poslat hodnotu větší než 255.",
 	"foreverLoopIn": 		"Blok 'opakuj stále' bude pokračovat, dokud nezmáčkneš na Edisonu čtvercové tlačítko.",
 	"setMotorLeft": 		"Blok 'nastav levý motor' jen zapne levý motor. Ujisti se, že používáš další bloky v programu k ovládání délky běhu motoru.",
 	"setMotorRight": 		"Blok 'nastav pravý motor' jen zapne pravý motor. Ujisti se, že používáš další bloky v programu k ovládání délky běhu motoru.",
@@ -73,11 +95,12 @@ Blockly.yellowErrorMessages = {
 	"repLoopLight": 		"Úroveň světla bude nastavena na vysokou hodnotu, což může způsobit, že Edison bude opakovat cyklus dlouho.",
 	"driveStrain":			"Blok 'zablokované motory' zjistí zablokování motorů, jen pokud jsou motory spuštěny.",
 	"driveStrainEvent":		"K událost 'motory zablokovány' může dojít, jen pokud jsou motory spuštěny.",
-	"comment":				"Komentáře jsou pomocné poznámky. Bloky komentářů nebudou nahrány do Edisona.",
-	"clearObs": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
-	"clearClap": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
-	"clearKey": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
-	"clearRemote": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
-	"clearIR": 				"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
+  "comment":				"Komentáře jsou pomocné poznámky. Bloky komentářů nebudou nahrány do Edisona.",
+  "usbUsed":				"USB bloky vyžadují, aby byl Edison připojen k zařízení.",
+  "clearObs": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
+  "clearClap": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
+  "clearKey": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
+  "clearRemote": 			"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
+  "clearIR": 				"Nějaká data senzorů jsou uložena v Edisonově paměti. Může být nezbytné smazat tato data, aby tvůj program fungoval správně. <a href='https://meetedison.com/robot-programming-software/edscratch/edscratch-warning-messages/#clear-data-message' target='_blank'>Více (v angličtině)</a>",
 
 };
