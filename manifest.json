@@ -23,7 +23,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.edscratchapp.com/v2*"
+        "*://*.edscratchapp.com/v2*",
+        "*://cloud.edscratchapp.com/*"
       ],
       "js": [
         "translate_dom.js"
