@@ -60,11 +60,11 @@ Blockly.Msg.CONTROL_ALLATONCE = 'all at once';
 // Data blocks
 Blockly.Msg.DATA_BUTTONCREATE = 'Vytvoř proměnnou';
 Blockly.Msg.DATA_BUTTONMANAGE = 'Spravuj proměnné';
-Blockly.Msg.DATA_SETVARIABLETO = 'set %1 to %2';
-Blockly.Msg.DATA_INCVARIABLE = 'increment %1';
-Blockly.Msg.DATA_DECVARIABLE = 'decrement %1';
-Blockly.Msg.DATA_BITSHIFTLEFT = 'bit shift %1 left by %2';
-Blockly.Msg.DATA_BITSHIFTRIGHT = 'bit shift %1 right by %2';
+Blockly.Msg.DATA_SETVARIABLETO = 'nastav %1 na %2';
+Blockly.Msg.DATA_INCVARIABLE = 'zvyš o jedna %1';
+Blockly.Msg.DATA_DECVARIABLE = 'sniž o jedna %1';
+Blockly.Msg.DATA_BITSHIFTLEFT = 'udělej bitový posun proměnné %1 doleva o %2';
+Blockly.Msg.DATA_BITSHIFTRIGHT = 'udělej bitový posun proměnné %1 doprava o %2';
 
 
 Blockly.Msg.DATA_CHANGEVARIABLEBY = 'change %1 by %2';
