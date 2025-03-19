@@ -73,7 +73,7 @@
             }
         },
         "condition": {
-            "urlFilter": "errorMessages.js",
+            "urlFilter": "js/errorMessages.js",
             "resourceTypes": [
                 "script"
             ]
