@@ -78,5 +78,21 @@
                 "script"
             ]
         }
+    },
+    {
+        "id": 6,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "extensionPath": "/scratch_msgs_czech.js"
+            }
+        },
+        "condition": {
+            "urlFilter": "v3/msg/scratch_msgs.js",
+            "resourceTypes": [
+                "script"
+            ]
+        }
     }
 ]
