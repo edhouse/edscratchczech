@@ -37,59 +37,11 @@
         "action": {
             "type": "redirect",
             "redirect": {
-                "extensionPath": "/blocks_compressed_vertical_czech_v3.js"
-            }
-        },
-        "condition": {
-            "urlFilter": "v3/blocks_compressed_vertical.js",
-            "resourceTypes": [
-                "script"
-            ]
-        }
-    },
-    {
-        "id": 4,
-        "priority": 1,
-        "action": {
-            "type": "redirect",
-            "redirect": {
-                "extensionPath": "/messages_czech_v3.js"
-            }
-        },
-        "condition": {
-            "urlFilter": "v3/msg/messages.js",
-            "resourceTypes": [
-                "script"
-            ]
-        }
-    },
-    {
-        "id": 5,
-        "priority": 1,
-        "action": {
-            "type": "redirect",
-            "redirect": {
                 "extensionPath": "/errorMessages_czech.js"
             }
         },
         "condition": {
             "urlFilter": "js/errorMessages.js",
-            "resourceTypes": [
-                "script"
-            ]
-        }
-    },
-    {
-        "id": 6,
-        "priority": 1,
-        "action": {
-            "type": "redirect",
-            "redirect": {
-                "extensionPath": "/scratch_msgs_czech.js"
-            }
-        },
-        "condition": {
-            "urlFilter": "v3/msg/scratch_msgs.js",
             "resourceTypes": [
                 "script"
             ]
